@@ -18,6 +18,10 @@ namespace BartenderApp.Controllers
             repository = repoService;
             cart = cartService;
         }
+        public ViewResult CompletedList()
+        {
+            return View(repository.Orders.Where(o => o.DrinksMade));
+        }
 
         [Authorize]
         public ViewResult List()
