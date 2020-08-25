@@ -1,0 +1,14 @@
+﻿@model Order
+<h2>Check out now</h2>
+<p>Please enter your name, and we'll make your drink(s) ASAP!</p>
+<div asp-validation-summary="All" class="text-danger"></div>
+<form asp-action="Checkout" method="post">
+    <h3>Who's Tab?</h3>
+    <div class="form-group">
+        <label>Name:</label><input asp-for="Name" class="form-control" />
+    </div>
+   
+    <div class="text-center">
+        <input class="btn btn-primary" type="submit" value="Complete Order" />
+    </div>
+</form>

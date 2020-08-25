@@ -1,0 +1,32 @@
+﻿@model Cocktail
+<div class="card m-3 rounded">
+    <div class="card-block m-2">
+        <div class="card-body">
+            <h3 class="card-title">
+                <strong>@Model.Name</strong>
+            </h3>
+            <p class="card-text lead">
+                @Model.Description
+            </p>
+            <span class="float-left bg-success text-white rounded m-2 p-1">
+                @Model.Price.ToString("c")
+            </span>
+            <form id="@Model.CocktailID" asp-action="AddToCart"
+                  asp-controller="Cart" method="post" class="float-right m-2 p-1">
+                <input type="hidden" asp-for="CocktailID" />
+                <input type="hidden" name="returnUrl"
+                       value="@ViewContext.HttpContext.Request.PathAndQuery()" />
+                <button type="submit" class="btn btn-info btn-sm float-right">
+                    Add to order
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- this file creates the viewpage HTML for the cocktail list that can be duplicated by using HTML partial view.-->
+<!--We have added a form element that contains hidden input elements specifying the CocktailID value from the view model
+    and the URL that the browser should be returned to after the cart has been updated. The form element and one of the input 
+    elements are configured using builtin tag helpers, which are a useful way of generating forms that contain model values 
+    and that target controllers and actions in the application. The other input element uses the extension method we
+    created to set the return URL. We also added a button element that will submit the form to the application.-->

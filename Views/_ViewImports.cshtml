@@ -1,0 +1,14 @@
+﻿@using BartenderApp.Models
+@using BartenderApp.Models.ViewModels
+@using BartenderApp.Infrastructure <!--namespace that contains the extension method to the ViewImports file so that we can use it in the partial view.-->
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper BartenderApp.Infrastructure.*, BartenderApp
+
+<!--The purpose of the _ViewImports.cshtml file is to provide a mechanism to make directives available to Razor pages
+globally so that you don't have to add them to pages individually.
+
+    The at using statement will allow us to use the types in the BartenderApp.Models namespace in views
+    without needing to refer to the namespace.
+
+    The ar addTagHelper statement enables the built-in tag helpers, which we use later to create HTML elements
+    that reflect the configuration of the BartenderApp application.-->

@@ -1,0 +1,19 @@
+﻿@model Cart
+<div class="">
+    @if (Model.Lines.Count() > 0)
+    {
+        <small class="navbar-text">
+            <b>Your cart:</b>
+            @Model.Lines.Sum(x => x.Quantity) item(s)
+            @Model.ComputeTotalValue().ToString("c")
+        </small>
+    }
+    <a class="btn btn-sm btn-dark"
+       asp-controller="Cart" asp-action="Index"
+       asp-route-returnurl="@ViewContext.HttpContext.Request.PathAndQuery()">
+        <i class="fa fa-shopping-cart"></i>
+    </a>
+</div>
+
+<!--The view displays a button with the Font Awesome cart icon and, if there are items in the cart, 
+    provides a snapshot that details the number of items and their total value.-->
