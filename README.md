@@ -17,3 +17,7 @@ the senior project course as I progress in skill. Here are things I plan to impl
 3. Sending a text to the user when their drink is ready
 4. Better control of account admin features - creating some sort of validation process for the user to be able to create an admin account 
 that they can navigate to from a view page instead of the URL route.
+
+Things to work on with a mentor:
+1. Practice a simple branching strategy
+2. Setup an action to deploy code
