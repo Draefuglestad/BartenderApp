@@ -18,9 +18,18 @@ namespace BartenderApp.Controllers
             repository = repoService;
             cart = cartService;
         }
-        public ViewResult CompletedList()
+        public ViewResult CompletedList() => View(repository.Orders.Where(o => !o.PickUpDrink && o.DrinksMade));
+        [HttpPost]
+        public IActionResult PickedUp(int orderID)
         {
-            return View(repository.Orders.Where(o => o.DrinksMade));
+            Order order = repository.Orders
+            .FirstOrDefault(o => o.OrderID == orderID);
+            if (order != null)
+            {
+                order.PickUpDrink = true;
+                repository.SaveOrder(order);
+            }
+            return RedirectToAction(nameof(CompletedList));
         }
 
         [Authorize]

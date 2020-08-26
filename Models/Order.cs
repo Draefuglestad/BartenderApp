@@ -13,6 +13,7 @@ namespace BartenderApp.Models
         [Required(ErrorMessage = "Please enter a name")]
         public string Name { get; set; }
         public bool DrinksMade { get; set; }
+        public bool PickUpDrink { get; set; }
 
     }
 }
