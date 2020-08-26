@@ -21,3 +21,5 @@ that they can navigate to from a view page instead of the URL route.
 Things to work on with a mentor:
 1. Practice a simple branching strategy
 2. Setup an action to deploy code
+
+//practicing branch push/pull
